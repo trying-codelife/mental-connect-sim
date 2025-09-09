@@ -70,50 +70,58 @@ const AdminDashboard: React.FC = () => {
       </div>
 
       {/* Key Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="shadow-card border-0 bg-gradient-primary text-primary-foreground">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <Users className="h-8 w-8" />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Card className="shadow-floating border-0 bg-gradient-primary text-primary-foreground hover-lift animate-float">
+          <CardContent className="p-6">
+            <div className="flex items-center space-x-4">
+              <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
+                <Users className="h-8 w-8" />
+              </div>
               <div>
                 <p className="text-sm opacity-90">Total Students</p>
-                <p className="text-2xl font-bold">{stats.totalStudents}</p>
+                <p className="text-3xl font-bold animate-glow">{stats.totalStudents}</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="shadow-card border-0 bg-gradient-success text-success-foreground">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <Users className="h-8 w-8" />
+        <Card className="shadow-floating border-0 bg-gradient-success text-success-foreground hover-lift animate-float" style={{ animationDelay: '0.2s' }}>
+          <CardContent className="p-6">
+            <div className="flex items-center space-x-4">
+              <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
+                <Users className="h-8 w-8" />
+              </div>
               <div>
                 <p className="text-sm opacity-90">Active Counselors</p>
-                <p className="text-2xl font-bold">{stats.totalCounselors}</p>
+                <p className="text-3xl font-bold animate-glow">{stats.totalCounselors}</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="shadow-card border-0">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <Calendar className="h-8 w-8 text-primary" />
+        <Card className="glass-effect shadow-elevated hover-lift hover-glow animate-float" style={{ animationDelay: '0.4s' }}>
+          <CardContent className="p-6">
+            <div className="flex items-center space-x-4">
+              <div className="p-3 bg-gradient-primary rounded-xl">
+                <Calendar className="h-8 w-8 text-primary-foreground" />
+              </div>
               <div>
                 <p className="text-sm text-muted-foreground">Total Appointments</p>
-                <p className="text-2xl font-bold text-foreground">{stats.totalAppointments}</p>
+                <p className="text-3xl font-bold text-foreground">{stats.totalAppointments}</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="shadow-card border-0">
-          <CardContent className="p-4">
-            <div className="flex items-center space-x-3">
-              <BookOpen className="h-8 w-8 text-primary" />
+        <Card className="glass-effect shadow-elevated hover-lift hover-glow animate-float" style={{ animationDelay: '0.6s' }}>
+          <CardContent className="p-6">
+            <div className="flex items-center space-x-4">
+              <div className="p-3 bg-gradient-primary rounded-xl">
+                <BookOpen className="h-8 w-8 text-primary-foreground" />
+              </div>
               <div>
                 <p className="text-sm text-muted-foreground">Resources</p>
-                <p className="text-2xl font-bold text-foreground">{stats.totalResources}</p>
+                <p className="text-3xl font-bold text-foreground">{stats.totalResources}</p>
               </div>
             </div>
           </CardContent>

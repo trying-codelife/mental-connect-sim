@@ -53,42 +53,53 @@ const StudentDashboard: React.FC = () => {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <Link to="/student/chatbot">
-          <Card className="hover:shadow-card transition-smooth cursor-pointer border-0 bg-gradient-primary text-primary-foreground">
-            <CardContent className="p-4 text-center">
-              <Heart className="h-8 w-8 mx-auto mb-2" />
-              <h3 className="font-semibold">AI Support</h3>
-              <p className="text-sm opacity-90">24/7 Chat Available</p>
+          <Card className="shadow-floating border-0 bg-gradient-hero text-primary-foreground hover-lift hover-glow cursor-pointer animate-float">
+            <CardContent className="p-6 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-glow opacity-30"></div>
+              <div className="relative z-10">
+                <div className="p-3 bg-white/20 rounded-xl mx-auto w-fit mb-3 backdrop-blur-sm">
+                  <Heart className="h-8 w-8 animate-glow" />
+                </div>
+                <h3 className="font-bold text-lg">AI Support</h3>
+                <p className="text-sm opacity-90">24/7 Chat Available</p>
+              </div>
             </CardContent>
           </Card>
         </Link>
 
         <Link to="/student/book">
-          <Card className="hover:shadow-card transition-smooth cursor-pointer">
-            <CardContent className="p-4 text-center">
-              <Calendar className="h-8 w-8 mx-auto mb-2 text-primary" />
-              <h3 className="font-semibold">Book Session</h3>
+          <Card className="glass-effect shadow-elevated hover-lift hover-glow cursor-pointer animate-float" style={{ animationDelay: '0.2s' }}>
+            <CardContent className="p-6 text-center">
+              <div className="p-3 bg-gradient-primary rounded-xl mx-auto w-fit mb-3">
+                <Calendar className="h-8 w-8 text-primary-foreground" />
+              </div>
+              <h3 className="font-bold text-lg">Book Session</h3>
               <p className="text-sm text-muted-foreground">Schedule with counselor</p>
             </CardContent>
           </Card>
         </Link>
 
         <Link to="/student/resources">
-          <Card className="hover:shadow-card transition-smooth cursor-pointer">
-            <CardContent className="p-4 text-center">
-              <BookOpen className="h-8 w-8 mx-auto mb-2 text-primary" />
-              <h3 className="font-semibold">Resources</h3>
+          <Card className="glass-effect shadow-elevated hover-lift hover-glow cursor-pointer animate-float" style={{ animationDelay: '0.4s' }}>
+            <CardContent className="p-6 text-center">
+              <div className="p-3 bg-gradient-primary rounded-xl mx-auto w-fit mb-3">
+                <BookOpen className="h-8 w-8 text-primary-foreground" />
+              </div>
+              <h3 className="font-bold text-lg">Resources</h3>
               <p className="text-sm text-muted-foreground">Helpful articles & tools</p>
             </CardContent>
           </Card>
         </Link>
 
         <Link to="/student/forum">
-          <Card className="hover:shadow-card transition-smooth cursor-pointer">
-            <CardContent className="p-4 text-center">
-              <MessageCircle className="h-8 w-8 mx-auto mb-2 text-primary" />
-              <h3 className="font-semibold">Peer Forum</h3>
+          <Card className="glass-effect shadow-elevated hover-lift hover-glow cursor-pointer animate-float" style={{ animationDelay: '0.6s' }}>
+            <CardContent className="p-6 text-center">
+              <div className="p-3 bg-gradient-primary rounded-xl mx-auto w-fit mb-3">
+                <MessageCircle className="h-8 w-8 text-primary-foreground" />
+              </div>
+              <h3 className="font-bold text-lg">Peer Forum</h3>
               <p className="text-sm text-muted-foreground">Connect with others</p>
             </CardContent>
           </Card>

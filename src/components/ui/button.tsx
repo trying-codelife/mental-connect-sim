@@ -9,15 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-soft",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-soft",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        success: "bg-success text-success-foreground hover:bg-success/90 shadow-soft",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth shadow-soft",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 transition-smooth shadow-soft",
+        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground transition-smooth",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-smooth shadow-soft",
+        ghost: "hover:bg-accent hover:text-accent-foreground transition-smooth",
+        link: "text-primary underline-offset-4 hover:underline transition-smooth",
+        success: "bg-success text-success-foreground hover:bg-success/90 transition-smooth shadow-soft",
         calm: "bg-gradient-calm text-foreground hover:opacity-90 shadow-soft transition-smooth",
-        glow: "bg-gradient-primary text-primary-foreground hover:shadow-glow shadow-soft transition-smooth",
+        glow: "bg-gradient-primary text-primary-foreground shadow-glow hover:shadow-floating hover:-translate-y-0.5 transition-smooth",
+        hero: "bg-gradient-hero text-primary-foreground shadow-floating hover:shadow-glow hover:-translate-y-1 transition-bounce animate-glow",
+        glass: "bg-gradient-glass backdrop-blur-lg border border-white/20 text-foreground hover:bg-white/20 transition-smooth",
       },
       size: {
         default: "h-10 px-4 py-2",
