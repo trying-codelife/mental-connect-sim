@@ -2,35 +2,35 @@ export const users = [
   // Students
   {
     id: 's1',
-    name: 'Alex Chen',
+    name: 'Mohan Gupta',
     role: 'student',
-    email: 'alex.chen@university.edu',
-    year: 'Junior',
+    email: 'mohan123@gmail.com',
+    year: '3rd',
     major: 'Computer Science'
   },
   {
     id: 's2',
-    name: 'Sarah Williams',
+    name: 'Ayushi jain',
     role: 'student',
-    email: 'sarah.williams@university.edu',
-    year: 'Sophomore',
+    email: 'jainAyushi@university.edu',
+    year: '1st',
     major: 'Psychology'
   },
   {
     id: 's3',
-    name: 'Marcus Johnson',
+    name: 'Manya Shukla',
     role: 'student',
-    email: 'marcus.johnson@university.edu',
-    year: 'Senior',
+    email: 'manya859@university.edu',
+    year: '2nd',
     major: 'Business Administration'
   },
 
   // Counselors
   {
     id: 'c1',
-    name: 'Dr. Emily Carter',
+    name: 'Dr.Sunali Thakur',
     role: 'counselor',
-    email: 'e.carter@university.edu',
+    email: 'e.Sunali@university.edu',
     specializations: ['Anxiety', 'Stress Management', 'Academic Pressure'],
     experience: '8 years',
     bio: 'Specialized in helping students manage academic stress and anxiety. Passionate about mindfulness-based approaches.',
@@ -38,9 +38,9 @@ export const users = [
   },
   {
     id: 'c2',
-    name: 'Dr. Michael Rodriguez',
+    name: 'Dr. Mahipal yadav',
     role: 'counselor',
-    email: 'm.rodriguez@university.edu',
+    email: 'm.yadav@university.edu',
     specializations: ['Depression', 'Relationship Issues', 'Self-Esteem'],
     experience: '12 years',
     bio: 'Experienced in cognitive behavioral therapy and helping students build resilience and confidence.',
@@ -48,9 +48,9 @@ export const users = [
   },
   {
     id: 'c3',
-    name: 'Dr. Lisa Thompson',
+    name: 'Dr. Durga',
     role: 'counselor',
-    email: 'l.thompson@university.edu',
+    email: 'd.Durga@university.edu',
     specializations: ['Career Counseling', 'Life Transitions', 'Goal Setting'],
     experience: '6 years',
     bio: 'Focuses on helping students navigate career decisions and major life transitions with confidence.',
@@ -59,7 +59,7 @@ export const users = [
 
   // Admin
   {
-    id: 'a1',
+    id: 'A1',
     name: 'Admin User',
     role: 'admin',
     email: 'admin@university.edu',

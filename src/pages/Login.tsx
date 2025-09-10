@@ -68,7 +68,7 @@ const Login: React.FC = () => {
           <div className="flex items-center justify-center space-x-2">
             <Heart className="h-12 w-12 text-primary" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground">MindCare Platform</h1>
+          <h1 className="text-3xl font-bold text-foreground">Mind Mantra</h1>
           <p className="text-muted-foreground">
             Supporting student mental health and wellbeing
           </p>

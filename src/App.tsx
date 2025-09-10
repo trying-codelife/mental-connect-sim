@@ -27,21 +27,28 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Layout><StudentDashboard /></Layout>} />
-            <Route path="/student" element={<Layout><StudentDashboard /></Layout>} />
-            <Route path="/student/resources" element={<Layout><Resources /></Layout>} />
-            <Route path="/student/book" element={<Layout><BookAppointment /></Layout>} />
-            <Route path="/student/forum" element={<Layout><Forum /></Layout>} />
-            <Route path="/student/chatbot" element={<Layout><ChatbotIntegration /></Layout>} />
-            <Route path="/counselor" element={<Layout><CounselorDashboard /></Layout>} />
-            <Route path="/counselor/bookings" element={<Layout><Bookings /></Layout>} />
-            <Route path="/admin" element={<Layout><AdminDashboard /></Layout>} />
-            <Route path="/admin/counselors" element={<Layout><ManageCounselors /></Layout>} />
-            <Route path="/admin/resources" element={<Layout><ManageResources /></Layout>} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+        <Routes>
+  {/* Pages without the layout go here */}
+  <Route path="/login" element={<Login />} />
+  <Route path="*" element={<NotFound />} />
+
+  {/* This single Layout wraps all the pages below it */}
+  <Route element={<Layout />}>
+    <Route path="/" element={<StudentDashboard />} />
+    <Route path="/student" element={<StudentDashboard />} />
+    <Route path="/student/resources" element={<Resources />} />
+    <Route path="/student/book" element={<BookAppointment />} />
+    <Route path="/student/forum" element={<Forum />} />
+    <Route path="/student/chatbot" element={<ChatbotIntegration />} />
+    
+    <Route path="/counselor" element={<CounselorDashboard />} />
+    <Route path="/counselor/bookings" element={<Bookings />} />
+    
+    <Route path="/admin" element={<AdminDashboard />} />
+    <Route path="/admin/counselors" element={<ManageCounselors />} />
+    <Route path="/admin/resources" element={<ManageResources />} />
+  </Route>
+</Routes>
         </BrowserRouter>
       </TooltipProvider>
     </AuthProvider>

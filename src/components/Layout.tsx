@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, Outlet } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
 import { Heart, LogOut, Home, Calendar, BookOpen, MessageCircle, Users, Settings, BarChart3 } from 'lucide-react';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const { currentUser, logout } = useAuth();
+const Layout: React.FC = () => {
+  // We need to get the "loading" state to prevent timing issues on login.
+  const { currentUser, loading, logout } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -18,8 +15,26 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     navigate('/login');
   };
 
+  // This part handles security and the loading state.
+  React.useEffect(() => {
+    // If it's done loading and there is NO user, go to the login page.
+    if (!loading && !currentUser) {
+      navigate('/login');
+    }
+  }, [currentUser, loading, navigate]);
+
+  // While the app is checking if you're logged in, show a simple loading message.
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div>Loading...</div>
+      </div>
+    );
+  }
+
+  // If there's no user, show nothing while we redirect.
   if (!currentUser) {
-    return <>{children}</>;
+    return null;
   }
 
   const getNavigationItems = () => {
@@ -50,12 +65,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const navItems = getNavigationItems();
 
+  // This is the main HTML structure.
   return (
     <div className="min-h-screen bg-gradient-calm relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-glow opacity-30 animate-float"></div>
       
-      {/* Header */}
+      {/* =================================================================== */}
+      {/* THIS IS THE HEADER SECTION THAT WAS MISSING FOR YOU               */}
+      {/* It contains your welcome message and the logout button.           */}
+      {/* =================================================================== */}
       <header className="relative z-10 glass-effect border-b border-white/10 shadow-soft">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -65,7 +84,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <div className="absolute inset-0 h-8 w-8 text-primary opacity-20 animate-ping"></div>
               </div>
               <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                MindCare Platform
+                Mind Mantra 
               </h1>
             </div>
             <div className="flex items-center space-x-4">
@@ -81,9 +100,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      {/* Main Layout */}
+      {/* Main Layout with Sidebar and Content */}
       <div className="flex max-w-7xl mx-auto relative z-10">
-        {/* Sidebar Navigation */}
+        
+        {/* =================================================================== */}
+        {/* THIS IS THE SIDEBAR NAVIGATION                                    */}
+        {/* =================================================================== */}
         <nav className="w-64 glass-effect border-r border-white/10 min-h-[calc(100vh-4rem)] backdrop-blur-md">
           <div className="p-4 space-y-2">
             {navItems.map((item) => {
@@ -108,10 +130,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </nav>
 
-        {/* Main Content */}
+        {/* =================================================================== */}
+        {/* THIS IS THE MAIN CONTENT AREA WHERE YOUR DASHBOARDS APPEAR        */}
+        {/* The <Outlet /> renders the specific page like StudentDashboard.   */}
+        {/* =================================================================== */}
         <main className="flex-1 p-6 relative">
           <div className="relative z-10">
-            {children}
+            <Outlet />
           </div>
         </main>
       </div>
