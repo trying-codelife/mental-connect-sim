@@ -79,7 +79,7 @@ const Login: React.FC = () => {
           <CardHeader className="text-center">
             <CardTitle>Welcome Back</CardTitle>
             <CardDescription>
-              Select a user profile to simulate login for this demo
+              Please select your profile to continue
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -118,26 +118,6 @@ const Login: React.FC = () => {
               Login to Platform
             </Button>
 
-            {/* Demo Info */}
-            <div className="mt-6 p-4 bg-accent/50 rounded-lg">
-              <p className="text-sm text-accent-foreground font-medium mb-2">
-                Demo Accounts Available:
-              </p>
-              <div className="space-y-1 text-xs text-muted-foreground">
-                <div className="flex items-center space-x-2">
-                  <Users className="h-3 w-3 text-primary" />
-                  <span>Students: Alex, Sarah, Marcus</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <UserCheck className="h-3 w-3 text-success" />
-                  <span>Counselors: Dr. Carter, Dr. Rodriguez, Dr. Thompson</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Shield className="h-3 w-3 text-warning" />
-                  <span>Admin: Admin User</span>
-                </div>
-              </div>
-            </div>
           </CardContent>
         </Card>
       </div>

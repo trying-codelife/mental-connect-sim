@@ -10,7 +10,7 @@ export const users = [
   },
   {
     id: 's2',
-    name: 'Ayushi jain',
+    name: 'Ayushi Jain',
     role: 'student',
     email: 'jainAyushi@university.edu',
     year: '1st',
@@ -28,7 +28,7 @@ export const users = [
   // Counselors
   {
     id: 'c1',
-    name: 'Dr.Sunali Thakur',
+    name: 'Dr. Sunali Thakur',
     role: 'counselor',
     email: 'e.Sunali@university.edu',
     specializations: ['Anxiety', 'Stress Management', 'Academic Pressure'],
