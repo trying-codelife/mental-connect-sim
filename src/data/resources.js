@@ -20,15 +20,15 @@ export const resources = [
     tags: ['anxiety', 'academics', 'testing', 'strategies']
   },
   {
-    id: 'r3',
-    title: 'Breathing Exercises for Stress Relief',
-    type: 'video',
-    category: 'Stress Management',
-    duration: '10 minutes',
-    description: 'Learn simple but effective breathing techniques to manage stress and anxiety.',
-    url: '#',
-    tags: ['breathing', 'stress', 'techniques', 'quick-relief']
-  },
+  id: 'r3-hi', // It's good practice to change the ID for different language versions
+  title: 'तनाव से राहत के लिए साँस लेने के व्यायाम',
+  type: 'वीडियो',
+  category: 'तनाव प्रबंधन',
+  duration: '10 मिनट',
+  description: 'तनाव और चिंता को प्रबंधित करने के लिए सरल लेकिन प्रभावी साँस लेने की तकनीकें सीखें।',
+  url: '#',
+  tags: ['साँस लेना', 'तनाव', 'तकनीकें', 'तुरंत राहत']
+}
   {
     id: 'r4',
     title: 'Building Healthy Study Habits',
